@@ -99,7 +99,7 @@ jobs:
         run: |
           cd ./iac/terraform/aca
           ls -lisa
-          terraform apply monplan.tfplan
+          terraform apply "monplan.tfplan"
 
 
             
