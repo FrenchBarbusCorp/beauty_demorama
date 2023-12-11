@@ -80,4 +80,10 @@ jobs:
           cd ./iac/terraform/aca
           ls -lisa
 
+      - name: upload plan
+        uses: actions/upload-artifact@v2
+        with:
+          name: monplan
+          path: ./iac/terraform/aca/monplan.tfplan
+
             
