@@ -42,7 +42,7 @@ jobs:
           output_file_path: console,results.sarif
       
       - name: Lint code Terraform with tfsec
-        uses: aquasecurity/tfsec-action@v1.0.3
+        uses: aquasecurity/tfsec-action@vb466648d6e39e7c75324f25d83891162a721f2d6
         with:
           working_directory: ./iac/terraform/aca
 
@@ -51,9 +51,6 @@ jobs:
           cd ./iac/terraform/aca
           ls -lisa
   
-
-
-
   build_artefact:
     runs-on: ubuntu-latest
     needs: lint_code_terraform
@@ -76,5 +73,11 @@ jobs:
             -var 'AzureTenandID=${{ secrets.TENANTID }}' \
             -var 'azure_region=westeurope' \
             -var 'rg_name=aca-rg' \
-            -out=monplan
+            -out=monplan.tfplan
+
+      - name: check file
+        run: |
+          cd ./iac/terraform/aca
+          ls -lisa
+          
             
