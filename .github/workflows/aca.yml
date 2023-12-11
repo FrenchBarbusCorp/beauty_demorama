@@ -92,7 +92,7 @@ jobs:
           terraform init -backend-config="sas_token=${{ secrets.BACKENDSTORAGESASTOKEN }}"
 
       - name: download plan
-        uses: actions/download-artifact@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/download-artifact@v3
         with:
           name: monplan
           path: ./iac/terraform/aca/monplan.tfplan
