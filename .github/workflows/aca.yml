@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Start time
+      - name: 🚀
         run: |
           echo "Start time 🚀 : $(date)"
 
