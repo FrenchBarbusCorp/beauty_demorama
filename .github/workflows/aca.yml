@@ -24,7 +24,8 @@ jobs:
 
   build_artefact:
     runs-on: ubuntu-latest
-    depends-on: info_runner
+    needs: info_runner
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
