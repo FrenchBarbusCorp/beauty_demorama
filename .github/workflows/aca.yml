@@ -56,7 +56,7 @@ jobs:
     needs: lint_code_terraform
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: Terraform init
         run: |
@@ -75,13 +75,8 @@ jobs:
             -var 'rg_name=aca-rg' \
             -out=monplan.tfplan
 
-      - name: check file
-        run: |
-          cd ./iac/terraform/aca
-          ls -lisa
-
       - name: upload plan
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
         with:
           name: monplan
           path: ./iac/terraform/aca/monplan.tfplan
