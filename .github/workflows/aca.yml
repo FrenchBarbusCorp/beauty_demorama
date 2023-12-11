@@ -3,9 +3,9 @@ name: Workflow Name
 on:
   push:
     branches:
-      - aca
+      [ aca ]
     paths:
-      - .github/workflows/aca.yml
+      - '.github/workflows/aca.yml'
 
 jobs:
 
