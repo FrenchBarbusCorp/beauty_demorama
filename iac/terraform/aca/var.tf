@@ -16,11 +16,8 @@ variable "AzureTenandID" {
 
 variable "azure_region" {
   type = string
-  default = "westeurope"
 }
 
 variable "rg_name" {
   type = string
-  default = "rg-aca"
-  
 }

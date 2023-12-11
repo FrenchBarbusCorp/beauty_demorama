@@ -38,3 +38,16 @@ jobs:
         run: |
           cd ./iac/terraform/aca
           terraform init -backend-config="sas_token=${{ secrets.BACKENDSTORAGESASTOKEN }}"
+
+      - name: Terraform plan
+        run: |
+          cd ./iac/terraform/aca
+          terraform plan \
+            -var 'AzureSubscriptionID=${{ secrets.SUBSCRIPTIONID }}' \
+            -var 'AzureClientSecret=${{ secrets.CLIENTSECRET }}' \
+            -var 'AzureClientID=${{ secrets.CLIENTID }}' \
+            -var 'AzureTenandID=${{ secrets.TENANTID }}' \
+            -var 'azure_region=westeurope' \
+            -var 'rg_name=aca-rg' \
+            -out=monplan
+            
