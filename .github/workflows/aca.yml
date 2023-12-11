@@ -36,4 +36,5 @@ jobs:
 
       - name: Terraform init
         run: |
-          terraform init -backend-config="sas_token=${{ secrets.BACKENDSTORAGESASTOKEN }}" -chdir=./iac/terraform/aca 
+          cd ./iac/terraform/aca
+          terraform init -backend-config="sas_token=${{ secrets.BACKENDSTORAGESASTOKEN }}"
