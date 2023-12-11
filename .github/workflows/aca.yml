@@ -42,7 +42,7 @@ jobs:
           output_file_path: console,results.sarif
       
       - name: Lint code Terraform with tfsec
-        uses: aquasecurity/tfsec-action@vb466648d6e39e7c75324f25d83891162a721f2d6
+        uses: aquasecurity/tfsec-action@b466648d6e39e7c75324f25d83891162a721f2d6
         with:
           working_directory: ./iac/terraform/aca
 
@@ -79,5 +79,5 @@ jobs:
         run: |
           cd ./iac/terraform/aca
           ls -lisa
-          
+
             
