@@ -12,6 +12,11 @@ jobs:
   info_runner:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Start time
+        run: |
+          echo "Start time 🚀 : $(date)"
+
       - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
