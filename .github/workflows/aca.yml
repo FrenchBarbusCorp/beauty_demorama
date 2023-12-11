@@ -100,10 +100,10 @@ jobs:
           name: monplan
           path: ./iac/terraform/aca/monplan.tfplan
 
-      - name: check file
+      - name: Terraform apply
         run: |
           cd ./iac/terraform/aca
-          ls -lisa
+          terraform apply monplan.tfplan
 
 
             
