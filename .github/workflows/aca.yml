@@ -32,14 +32,20 @@ jobs:
     needs: info_runner
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
 
       - name: Lint code Terraform with Checkov
-        uses: bridgecrewio/checkov-action@v12
+        uses: bridgecrewio/checkov-action@c19f68b287bf9e0b659a121c8a9bec2ed006e3df
         with:
           directory: ./iac/terraform/aca
           output_format: cli,sarif
           output_file_path: console,results.sarif
+      
+      - name: Lint code Terraform with tfsec
+        uses: aquasecurity/tfsec-action@v1.0.0
+        with:
+          working_directory: ./iac/terraform/aca
+  
 
 
 
