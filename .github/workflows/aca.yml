@@ -81,4 +81,26 @@ jobs:
           name: monplan
           path: ./iac/terraform/aca/monplan.tfplan
 
+  deploy_artefact:
+    runs-on: ubuntu-latest
+    needs: build_artefact
+    steps:
+
+      - name: Terraform init
+        run: |
+          cd ./iac/terraform/aca
+          terraform init -backend-config="sas_token=${{ secrets.BACKENDSTORAGESASTOKEN }}"
+
+      - name: download plan
+        uses: actions/download-artifact@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          name: monplan
+          path: ./iac/terraform/aca/monplan.tfplan
+
+      - name: check file
+        run: |
+          cd ./iac/terraform/aca
+          ls -lisa
+
+
             
