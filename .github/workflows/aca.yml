@@ -1,4 +1,4 @@
-name: Choice Runner
+name: Terraform aca
 
 on:
   push:
@@ -34,3 +34,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Terraform init
+        run: |
+          terraform init -chdir=ica/terraform/aca -backend-config="sas_token=${{ secrets.BACKENDSTORAGESASTOKEN }}"
