@@ -16,7 +16,8 @@ jobs:
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
 
-      - name: Info runner CPU & RAM
+      - name: Info runner CPU & RAM & HHD
         run: |
           echo "CPU: $(nproc)"
           echo "RAM: $(free -m)"
+          echo "HDD: $(df -h)"
