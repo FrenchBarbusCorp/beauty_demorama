@@ -86,6 +86,9 @@ jobs:
     needs: build_artefact
     steps:
 
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+
       - name: Terraform init
         run: |
           cd ./iac/terraform/aca
