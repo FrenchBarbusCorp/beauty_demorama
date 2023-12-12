@@ -78,7 +78,7 @@ jobs:
 
   deploy_artefact:
     environment:
-    name: iac
+      name: iac
     runs-on: ubuntu-latest
     needs: build_artefact
     
