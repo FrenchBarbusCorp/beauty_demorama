@@ -95,9 +95,6 @@ jobs:
           name: monplan
           path: ./iac/terraform/aca/monplan.tfplan
 
-      - name: Terraform apply
-        run: |
-          working-directory: ./iac/terraform/aca
-          cd ./iac/terraform/aca
-          ls -lisa
-          terraform show monplan.tfplan
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: ./iac/terraform/aca
