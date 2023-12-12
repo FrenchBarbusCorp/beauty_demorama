@@ -93,7 +93,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: monplan
-          path: ./iac/terraform/aca/monplan.tfplan
+          path: /iac/terraform/aca/monplan.tfplan
 
       - name: Display structure of downloaded files
         run: ls -R
