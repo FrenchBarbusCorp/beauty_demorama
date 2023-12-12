@@ -97,6 +97,7 @@ jobs:
 
       - name: Terraform apply
         run: |
+          working-directory: ./iac/terraform/aca
           cd ./iac/terraform/aca
           ls -lisa
           terraform show monplan.tfplan
