@@ -98,3 +98,8 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
         working-directory: ./iac/terraform/aca
+
+      - name: Terraform apply
+        run: |
+          cd ./iac/terraform/aca
+          terraform apply monplan.tfplan
