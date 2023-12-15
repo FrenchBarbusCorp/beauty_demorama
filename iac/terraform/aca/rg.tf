@@ -5,4 +5,3 @@ resource "azurerm_resource_group" "rg_aca" {
     environment = "dev"
   }
 }
-
